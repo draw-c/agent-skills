@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Dashboard • Overview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+    :root {
+      --primary: 234 179 8; /* amber-500 */
+    }
+
+    .grid-responsive {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: clamp(1.25rem, 4vw, 2rem);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+
+    @media (max-width: 900px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 font-['Inter']">
+
+<div class="main-grid">
+
+  <!-- Sidebar -->
+  <div class="bg-zinc-900 border-r border-zinc-800 p-6 hidden md:flex flex-col">
+    <div class="flex items-center gap-3 mb-10">
+      <div class="w-9 h-9 bg-yellow-500 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-2xl">A</div>
+      <span class="font-semibold text-2xl tracking-tighter">Acme</span>
+    </div>
+
+    <nav class="space-y-1 flex-1">
+      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-zinc-800 text-white font-medium">
+        <i class="fa-solid fa-house w-5"></i>
+        <span>Overview</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-zinc-800/70 transition-colors">
+        <i class="fa-solid fa-chart-line w-5"></i>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-zinc-800/70 transition-colors">
+        <i class="fa-solid fa-users w-5"></i>
+        <span>Customers</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-zinc-800/70 transition-colors">
+        <i class="fa-solid fa-box w-5"></i>
+        <span>Projects</span>
+      </a>
+      <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-zinc-800/70 transition-colors">
+        <i class="fa-solid fa-gear w-5"></i>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="pt-8 border-t border-zinc-800 mt-auto">
+      <div class="flex items-center gap-3">
+        <img src="https://picsum.photos/id/64/128/128" alt="" class="w-9 h-9 rounded-full object-cover">
+        <div>
+          <div class="font-medium">Chris</div>
+          <div class="text-xs text-zinc-500">Pro Plan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1">
+    <!-- Top Header -->
+    <header class="bg-zinc-900 border-b border-zinc-800 px-8 py-5 flex items-center justify-between sticky top-0 z-50">
+      <div class="flex items-center gap-4">
+        <button class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+        <h1 class="text-3xl font-semibold tracking-tighter">Overview</h1>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <div class="relative w-80">
+          <input type="text" placeholder="Search anything..."
+                 class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl py-3 pl-12 text-sm focus:outline-none focus:border-yellow-500">
+          <i class="fa-solid fa-magnifying-glass absolute left-5 top-3.5 text-zinc-500"></i>
+        </div>
+
+        <button class="w-10 h-10 flex items-center justify-center hover:bg-zinc-800 rounded-2xl transition-colors">
+          <i class="fa-solid fa-bell"></i>
+        </button>
+        <button class="w-10 h-10 flex items-center justify-center hover:bg-zinc-800 rounded-2xl transition-colors">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="p-8">
+      <!-- Stats Cards -->
+      <div class="grid-responsive mb-12">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-zinc-400 text-sm mb-2">Total Revenue</div>
+          <div class="text-4xl font-semibold tracking-tighter">$248,392</div>
+          <div class="text-emerald-400 text-sm mt-4 flex items-center gap-1">
+            <i class="fa-solid fa-arrow-trend-up"></i> +18.2% this month
+          </div>
+        </div>
+
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-zinc-400 text-sm mb-2">Active Users</div>
+          <div class="text-4xl font-semibold tracking-tighter">12,849</div>
+          <div class="text-emerald-400 text-sm mt-4 flex items-center gap-1">
+            <i class="fa-solid fa-arrow-trend-up"></i> +4.8% this week
+          </div>
+        </div>
+
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <div class="text-zinc-400 text-sm mb-2">Projects Completed</div>
+          <div class="text-4xl font-semibold tracking-tighter">387</div>
+          <div class="text-amber-400 text-sm mt-4 flex items-center gap-1">
+            <i class="fa-solid fa-arrow-trend-up"></i> 92% on time
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts + Activity -->
+      <div class="grid grid-cols-1 lg:grid-cols-7 gap-8">
+
+        <!-- Main Chart -->
+        <div class="lg:col-span-4 bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <div class="flex justify-between mb-8">
+            <div>
+              <h3 class="font-semibold">Revenue Trend</h3>
+              <p class="text-sm text-zinc-500">Last 6 months</p>
+            </div>
+            <select class="bg-zinc-800 border border-zinc-700 rounded-2xl px-4 py-2 text-sm">
+              <option>Monthly</option>
+              <option>Quarterly</option>
+            </select>
+          </div>
+          <div class="h-80 bg-zinc-950 rounded-2xl flex items-center justify-center border border-dashed border-zinc-700">
+            <p class="text-zinc-500">📈 Revenue Chart Placeholder (use Chart.js / Recharts in real project)</p>
+          </div>
+        </div>
+
+        <!-- Quick Stats Sidebar -->
+        <div class="lg:col-span-3 space-y-8">
+          <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+            <h3 class="font-semibold mb-6">This Month's Goals</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span>New Signups</span>
+                  <span class="font-medium">1,284 / 1,500</span>
+                </div>
+                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div class="h-2 w-[85%] bg-yellow-500 rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-2">
+                  <span>Support Tickets</span>
+                  <span class="font-medium">23 / 50</span>
+                </div>
+                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div class="h-2 w-[46%] bg-emerald-500 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+            <h3 class="font-semibold mb-4">Recent Activity</h3>
+            <div class="space-y-5 text-sm">
+              <div class="flex gap-4">
+                <div class="text-emerald-400">↑</div>
+                <div class="flex-1">
+                  <div><strong>Sarah Chen</strong> upgraded to Enterprise</div>
+                  <div class="text-zinc-500 text-xs">2 hours ago</div>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="text-amber-400">📦</div>
+                <div class="flex-1">
+                  <div>Project <strong>Website Redesign</strong> completed</div>
+                  <div class="text-zinc-500 text-xs">Yesterday</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="mt-12 bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+        <div class="px-8 py-6 border-b border-zinc-800 flex justify-between items-center">
+          <h3 class="font-semibold">Recent Projects</h3>
+          <button class="text-yellow-500 hover:text-yellow-400 text-sm font-medium flex items-center gap-2">
+            View all <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-zinc-800 text-zinc-400 text-sm">
+              <th class="text-left py-5 px-8 font-normal">Project</th>
+              <th class="text-left py-5 px-8 font-normal">Client</th>
+              <th class="text-left py-5 px-8 font-normal">Status</th>
+              <th class="text-left py-5 px-8 font-normal">Progress</th>
+              <th class="text-right py-5 px-8 font-normal">Due</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b border-zinc-800 hover:bg-zinc-800/50">
+              <td class="py-6 px-8 font-medium">Mobile App Redesign</td>
+              <td class="py-6 px-8 text-zinc-400">Stripe</td>
+              <td class="py-6 px-8"><span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-2xl text-xs">Completed</span></td>
+              <td class="py-6 px-8">100%</td>
+              <td class="py-6 px-8 text-right text-zinc-400">May 12</td>
+            </tr>
+            <tr class="hover:bg-zinc-800/50">
+              <td class="py-6 px-8 font-medium">Marketing Website</td>
+              <td class="py-6 px-8 text-zinc-400">Linear</td>
+              <td class="py-6 px-8"><span class="px-3 py-1 bg-amber-500/10 text-amber-400 rounded-2xl text-xs">In Progress</span></td>
+              <td class="py-6 px-8">67%</td>
+              <td class="py-6 px-8 text-right text-zinc-400">May 28</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
